@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme d'Études - L'informatique</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #DBF9DB, #E8ADAA);
+            color: #454545;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: bold;
+			font-family: monospace;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header .program-info {
+            text-align: right;
+			font-family: optima;
+            font-size: 14px;
+            line-height: 1.3;
+        }
+
+        .main-title {
+            background-color: #E3E4FA;
+            color: white;
+            padding: 15px 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            color: #333;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .left-column, .right-column {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .question-section h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .question-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .question-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .question-list li:before {
+            content: "•";
+            color: #4a9eca;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #DBF9DB, #E8ADAA);
+            color: #454545;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 20px 0;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(74, 158, 202, 0.3);
+        }
+
+        .career-section h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #555;
+            text-transform: uppercase;
+        }
+
+        .career-list {
+            list-style: none;
+        }
+
+        .career-list li {
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+            font-size: 13px;
+        }
+
+        .career-list li:before {
+            content: "•";
+            color: #4a9eca;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .info-section {
+            margin-bottom: 20px;
+        }
+
+        .info-section h3 {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #555;
+            text-transform: uppercase;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .info-section p {
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: 8px;
+        }
+
+        .contact-info {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        .contact-info a {
+            color: #4a9eca;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .course-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 12px;
+        }
+
+        .course-table th {
+            background: linear-gradient(135deg, #4a9eca, #5bb3d9);
+            color: white;
+            padding: 10px 8px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .course-table td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid #ddd;
+            background-color: white;
+        }
+
+        .course-table tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        @media (max-width: 768px) {
+            .two-column {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .container {
+                margin: 10px;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><b>L'informatique</b></h1>
+            <div class="program-info">
+                Développeur Python<br>
+                Programme non contingenté<br>
+                Cours offerts le jour seulment
+            </div>
+        </div>
+
+        <div class="main-title">
+            
+        </div>
+
+        <div class="content">
+            <!-- <p class="section-title">1. Olivier et Thomas se renseignent sur les formations qui les intéressent. Lisez les renseignements sur les 2 programmes d'études.</p>-->
+
+            <div class="two-column">
+                <div class="left-column">
+                    <div class="question-section">
+                        <h3>Pourquoi Python pourrait être un bon choix:</h3>
+                        <ul class="question-list">
+                            <li>Polyvalence : Python est utilisé dans de nombreux domaines, ce qui en fait un langage flexible à apprendre.</li>
+                            <li>Demande croissante : Il existe une forte demande de développeurs Python dans divers secteurs, notamment le développement web, la science des données et le machine learning.</li>
+                            <li>Facilité d'apprentissage : Python est connu pour sa syntaxe relativement simple à comprendre, ce qui en fait un excellent choix pour les débutants.</li>
+                            <li>Une communauté et des ressources étendues : Une vaste communauté soutient Python, offrant de nombreuses ressources, bibliothèques et frameworks pour vous aider à apprendre et à créer des projets.</li>
+                            
+                        </ul>
+         
+                    </div>
+					
+					<div class="question-section">
+                        <h3>Responsabilités du poste:</h3>
+                        <ul class="question-list">
+                            <li>Écrire du code de qualité et tester régulièrement les erreurs.</li>
+                            <li>Créer et déployer des programmes.</li>
+                            <li>Intégrer des éléments orientés utilisateur aux applications.</li>
+                            <li>Développer des composants back-end pour améliorer la réactivité et les performances globales.</li>
+                            
+                        </ul>
+                        <button class="cta-button">Si vous les acceptez, ce cours est pour vous !</button>
+                    </div>
+
+                    <div class="career-section">
+                        <h3>Les possibilités de carrière</h3>
+                        <ul class="career-list">
+                            <li>Développeur Python senior</li>
+                            <li>Développeur Python Full Stack</li>
+                            <li>Ingénieur back-end</li>
+                            <li>Ingénieur logiciel en algorithmes et optimisation</li>
+                            <li>Ingénieur données</li>
+                            <li>Ingénieur apprentissage automatique</li>
+                            <li>etc.</li>
+							
+                        </ul>
+                    </div>
+
+                    <div class="career-section">
+                        <h3>Les entreprises où tu pourrais travailler !</h3>
+                        <ul class="career-list">
+                            <li>Google</li>
+                            <li>Facebook</li>
+                            <li>Netflix</li>
+                            <li>Spotify</li>
+                            <li>Instagram</li>
+                            <li>Finance : Des entreprises comme <a href="https://www.goldmansachs.com/">Goldman Sachs</a> et <a href="https://www.bloomberg.com/canada">Bloomberg</a> utilisent Python pour des tâches telles que l'analyse de données, la gestion des risques et le trading algorithmique.</li>
+                            <li>etc.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="right-column">
+                    <div class="info-section">
+                        <h3>Et si tu voulais poursuivre tes études...</h3>
+                        <p>Contactez-nous par email pour poursuivre vos études</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>L'alternance travail-études (ATE)</h3>
+                        <p>Au moins 4 mois de stages rémunérés dans le domaine.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Les stages à l'étranger</h3>
+                        <p>Tu pourrais effectuer des stages partout dans le monde à distance ou sur site. Recherchez sur des plateformes telles que <a href="https://ca.indeed.com/">Indeed</a>, <a href="https://www.linkedin.com/hp/">LinkedIn</a>, <a href="https://www.glassdoor.com/index.htm">Glassdoor</a>, <a href="https://www.wayup.com/">WayUp</a> et <a href="https://www.simplyhired.ca/">Simply Hired</a>.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Les préalables</h3>
+                        <p>Pour devenir développeur Python, un bon point de départ est d’apprendre les <a href="https://www.geeksforgeeks.org/python/python-basics/">fondamentaux</a> de Python, notamment la <a href="https://www.w3schools.com/python/python_syntax.asp">syntaxe</a>, les structures de données et la programmation orientée <a href="https://www.geeksforgeeks.org/python/python-oops-concepts/">objet</a>.</p>
+                    </div>
+
+                    <div class="info-section">
+                        <h3>Pour en savoir plus</h3>
+                        <!--<div class="contact-info">
+                            <p><strong>Aide pédagogique individuelle</strong></p>
+                            <p>Mme Sylvie C.</p>
+                            <p>Tél. 526 528-8587, poste 290</p>
+                            <p><a href="mailto:c.sylvie@ecoledumeuble.ca">c.sylvie@ecoledumeuble.ca</a></p>
+                        </div>-->
+                        <div class="contact-info">
+                            <p><strong>Coordonnateur du programme</strong></p>
+                            <p>Khorsid A.</p>
+                            <p>Tél. 123-456-7890, poste 123</p>
+                            <p><a href="mailto:développeur@python.ca">développeur@python.ca</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-section">
+                        <h3><b>Exemples de cours à suivre</b></h3>
+                        <table class="course-table">
+                            <thead>
+                                <tr>
+                                    <th>Session</th>
+                                    <th>Numéro du cours</th>
+                                    <th>Titre du cours</th>
+                                    <th>Nombre d'heures</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>123-112-DPD</td>
+                                    <td>Développeur Python - Débutant (en ligne)</td>
+                                    <td>100</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>123-112-DPI</td>
+                                    <td>Développeur Python - Intermédiaire (en ligne)</td>
+                                    <td>60</td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>123-112-DPA</td>
+                                    <td>Développeur Python - Avancé (en ligne)</td>
+                                    <td>60</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
