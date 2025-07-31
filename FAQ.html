@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        .faq-container {
+            margin: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .faq-container h2 {
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-item h3 {
+            background-color: #eee;
+            padding: 10px;
+            margin: 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .faq-item p {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .faq-item.active p {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Questions fréquemment posées</h1>
+</header>
+
+<div class="faq-container">
+    <h2>Questions courantes</h2>
+
+    <div class="faq-item">
+        <h3>Quelle est la politique du cours ?</h3>
+        <p>Aucune politique, une seule chose : apprendre une compétence et trouver un emploi.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Combien ça coûte?</h3>
+        <p>cela coûte 25$/heure, si vous avez une carte d'étudiant, vous pouvez demander une aide financière qui fournira un cours gratuit</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>J’ai un statut de visa de travail — puis-je m’inscrire à cette formation ?</h3>
+        <p>oui, il n'y a aucune restriction</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>Combien de temps durerait le cours/la formation ?</h3>
+        <p>Jusqu'à ce que vous ayez terminé les heures mentionnées dans votre cours</p>
+    </div>
+	
+	<div class="faq-item">
+        <h3>Existe-t-il un programme qui aide à trouver un stage ou un emploi ?</h3>
+        <p>Comme mentionné, vous pouvez trouver des emplois/stages par vous-même ou demander de l'aide par e-mail.</p>
+    </div>
+	
+	<div class="faq-item">
+        <h3>Quelles sont les perspectives d’emploi et le marché du travail ?</h3>
+        <p>Le marché du travail est très bon dans le domaine de l'informatique, donc si vous travaillez dur, il n'est pas difficile de trouver un emploi.</p>
+    </div>
+	
+	<div class="faq-item">
+        <h3>Y a-t-il des examens pour réussir ce cours ?</h3>
+        <p>Oui, lorsque vous réussissez l'examen final, vous recevrez le certificat et vous devrez le terminer dans le délai imparti pour le cours.</p>
+    </div>
+</div>
+
+<script>
+    // Toggle visibility of answers
+    document.querySelectorAll('.faq-item h3').forEach(item => {
+        item.addEventListener('click', () => {
+            const faqItem = item.parentElement;
+            faqItem.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+</html>
